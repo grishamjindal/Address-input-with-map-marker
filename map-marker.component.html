@@ -1,0 +1,36 @@
+
+<div class="address-label">Address<sub>(Allow location access or drag the marker)</sub></div>
+
+<div class="relative">
+  <input class="form-control" #searchBox type="text" id="address" autocorrect="off" placeholder="Search for location" spellcheck="off" autocapitalize="off" >
+  <!-- <a *ngIf="!searchBox.value" (click)="setCurrentPosition()" class="current">Use current location</a> -->
+</div>
+
+<agm-map
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="true"
+  (mapClick)="mapClicked($event)">
+
+  <agm-marker *ngIf="markerClicked"
+      [latitude]="lat"
+      [longitude]="lng"
+      [markerDraggable]="true"
+      (dragEnd)="markerDragEnd($event)">
+
+    <agm-info-window>
+      <strong>{{ label }}</strong>
+    </agm-info-window>
+
+  </agm-marker>
+<!--
+  <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
+      [radius]="5000"
+      [fillColor]="'red'"
+      [circleDraggable]="true"
+      [editable]="true">
+  </agm-circle> -->
+
+</agm-map>

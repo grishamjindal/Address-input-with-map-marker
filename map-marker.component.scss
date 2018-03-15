@@ -1,0 +1,34 @@
+agm-map {
+  height: 300px;
+  display: block;
+  margin-bottom: 40px;
+}
+
+input#address {
+  width: 100%;
+  height: 35px;
+  margin: 5px 0 5px;
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.address-label {
+  margin: 20px 0 0;
+  font-size: 16px;
+  sub {
+    float: right;
+    margin-top: 10px;
+    color: #aaa;
+  }
+}
+
+a.current {
+  position: absolute;
+  top: 8px;
+  z-index: 99;
+  right: 4px;
+  border-radius: 3px;
+  font-size: 13px;
+  padding: 3px 15px 2px;
+  background: #eee;
+}
